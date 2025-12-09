@@ -23,7 +23,7 @@ class ProjectLauncher(QMainWindow):
     def init_ui(self):
         """Initialisation de l'interface"""
         self.setWindowTitle("Lanceur de Projets - Recherche Opérationnelle")
-        self.setGeometry(100, 100, 600, 500)
+        self.setGeometry(100, 100, 600, 600)
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #F9FAFB;
@@ -126,6 +126,19 @@ class ProjectLauncher(QMainWindow):
             "Bandwidth Flow Optimizer"
         ))
         button_layout.addWidget(self.btn_bandwidth)
+        
+        # Projet 4 : Conditionnement Agroalimentaire
+        self.btn_agro = QPushButton()
+        self.btn_agro.setText(
+            "🏭 Conditionnement Agroalimentaire\n"
+            "   Optimisation de processus de conditionnement"
+        )
+        self.btn_agro.setMinimumHeight(80)
+        self.btn_agro.clicked.connect(lambda: self.launch_project(
+            "Conditionnement-Agroalimentaire",
+            "Conditionnement Agroalimentaire"
+        ))
+        button_layout.addWidget(self.btn_agro)
         
         layout.addWidget(button_frame)
         
